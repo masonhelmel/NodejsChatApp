@@ -11,8 +11,8 @@ RUN npm install
 # Copy the rest of the code
 COPY . .
 
-# Expose Port 3000
-EXPOSE 3000
+# Expose Port 3700
+EXPOSE 3700
 
 # Start the app
-CMD ["node", "app.js"]
+CMD ["node", "index.js"]
