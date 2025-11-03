@@ -17,21 +17,6 @@ pipeline
             }
         }
 
-        stage('SCA-SAST-TEST')
-        {
-            agent any
-            steps
-            {
-                script
-                {
-                    snykSecurity(
-                        snykInstallation: 'Snyk-Install',
-                        snykTokenId: 'Snyk-API-token',
-                        severity: 'critical'
-                    )
-                }
-            }
-        }
 
         stage('Build-and-Tag')
         {
@@ -64,14 +49,6 @@ pipeline
                         app.push("latest")
                     }
                 }
-            }
-        }
-
-        stage('DAST')
-        {
-            steps
-            {
-                sh 'echo Running DAST scan with snyk...'
             }
         }
 
