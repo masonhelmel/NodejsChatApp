@@ -17,6 +17,21 @@ pipeline
             }
         }
 
+        stage('SonarQube Analysis') {
+            agent { label '3120-lab1-Appserver'}
+            
+            steps {
+                script {
+                    def scannerHome = tool 'SonarQube-Scanner-SAST'
+                    withSonarQubeEnv('SonarQube-Installations-SAST') {
+                        sh "${scannerHome}/bin/sonar-scanner \
+                            -Dsonar.projectKey=Chat-App \
+                            -Dsonar.sources=."
+                    }
+                }
+            }
+        }
+
 
         stage('Build-and-Tag')
         {
