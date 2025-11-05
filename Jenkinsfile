@@ -4,7 +4,7 @@ pipeline
     environment {
         // Docker Hub credentials ID stored in Jenkins
         DOCKER_HUB_CREDENTIALS = 'Cyber-3120'
-        IMAGE_NAME = 'helmasw/chat-app'
+        IMAGE_NAME = 'helmasw/chat-app-01'
     }
 
     stages
