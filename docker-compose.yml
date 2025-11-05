@@ -3,7 +3,7 @@ services:
   chat-app:
     image: helmasw/chat-app:latest
     build: . 
-    container_name: chat-app-01
+    container_name: chat-app
     ports:
       - "80:3700"
     environment:
